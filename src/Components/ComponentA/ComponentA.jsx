@@ -30,7 +30,7 @@ function ComponentA() {
   }
 
   return (
-    <div className="component-container">
+    <section className="component-container">
       <input
         type="text"
         className="input-field"
@@ -43,7 +43,7 @@ function ComponentA() {
       <InputValueContext.Provider value={inputValue}>
         <ConditionalText isTrue={show} />
       </InputValueContext.Provider>
-    </div>
+    </section>
   );
 }
 
