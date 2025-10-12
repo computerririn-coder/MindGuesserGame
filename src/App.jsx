@@ -1,8 +1,8 @@
 
 import './App.css'
-import ComponentA from './Components/ComponentA/ComponentA'
-import List from './Components/List'
-import Text from './Components/Text Component 1/Text'
+import ComponentA from './Components/Component 1/ComponentA'
+import List from './Components/Component 3/List'
+import Text from './Components/Component 2/Text'
 import Navbar from './NavigationBar/NavBar'
 function App() {
 
@@ -10,10 +10,11 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Text/>
-      <ComponentA/>
-      <List/>
-    </>
+<div className="component-container">
+    <Text/>
+    <ComponentA/>
+</div>
+   </>
   )
 }
 
