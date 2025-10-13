@@ -15,6 +15,7 @@ function ComponentA() {
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const [inputArray, setInputArray] = useState([]);
+
   function handleInputChange(event) {
     setInputValue(event.target.value);
   }
@@ -29,8 +30,9 @@ function ComponentA() {
     }
 
     setError("");
-    setShow(prev => !prev);
+    setShow(true);
     setInputArray([...inputArray, inputValue]);
+    setInputValue("");
     console.log(inputArray);
   }
 

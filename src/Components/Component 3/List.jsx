@@ -7,15 +7,16 @@ import { inputArrayContext } from '../Component 1/ComponentA';
 function List() {
 const inputArray = useContext(inputArrayContext);
 
-  return (
-    <section className="list">
-      <p className={styles.text}>List of prev</p>
+  return (<>
+    <section className={styles.list}>
+      <p className={styles.textTitle}>List Of Previous Mind Readings</p>
 <ul className={styles.text}>
   {inputArray.map((element, index) => (
     <li key={index}>{element}</li>
   ))}
 </ul>
     </section>
+    </>
   );
 }
 
