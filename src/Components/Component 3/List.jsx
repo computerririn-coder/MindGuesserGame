@@ -1,11 +1,11 @@
 
 import { useContext } from 'react';
 import styles from './List.module.css';
-import { inputArrayContext } from '../Component 1/ComponentA';
+import { InputArrayContext } from '../Component 1/ComponentA';
 
 
 function List() {
-const inputArray = useContext(inputArrayContext);
+const inputArray = useContext(InputArrayContext);
 
   return (<>
     <section className={styles.list}>
