@@ -1,4 +1,4 @@
-
+//this is the component that includes just texts ,can be founf on top of component 1
 
 import styles from './Text.module.css'
 

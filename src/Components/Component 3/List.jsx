@@ -1,3 +1,5 @@
+//this is the component for displaying the list of previous user inputs
+
 
 import { useContext } from 'react';
 import styles from './List.module.css';

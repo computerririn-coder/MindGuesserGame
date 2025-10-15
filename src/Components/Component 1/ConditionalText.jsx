@@ -1,4 +1,4 @@
-
+//Conditional rendering for ComponentA to show the user input when button is clicked
 
 import { useContext } from "react";
 import { InputValueContext } from "./ComponentA";

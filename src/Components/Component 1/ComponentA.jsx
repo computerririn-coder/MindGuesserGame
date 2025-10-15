@@ -1,3 +1,6 @@
+/*this is the component that accepts imputs just below the text that contains 
+"Number Guesser I Will Guess Your Mind Enter What You’re Thinking"*/
+
 import { useState, useRef, createContext } from "react";
 import ConditionalText from "./ConditionalText";
 import { Validation } from "./Validation";
@@ -8,17 +11,15 @@ export const InputValueContext = createContext();
 export const InputArrayContext = createContext();
 
 function ComponentA() {
+  // i know i can use useReducer here but i wanna show that i can use these react hooks 
   const [inputValue, setInputValue] = useState("");
   const [show, setShow] = useState(false);
   const [error, setError] = useState("");
   const [inputArray, setInputArray] = useState([]);
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
   function handleResult() {
-    // use ref here to get input value
-    // example: const userInput = inputRef.current.value;
-const userInput = inputRef.current.value;
-
+    const userInput = inputRef.current.value;
     const errorMessage = Validation(userInput);
 
     if (errorMessage) {
@@ -26,13 +27,15 @@ const userInput = inputRef.current.value;
       setShow(false);
       return;
     }
+    
+    
 
     setError("");
     setShow(true);
     setInputArray([...inputArray, userInput]);
     setInputValue(userInput);
 
- inputRef.current.value = ""
+    inputRef.current.value = "";
   }
 
   return (
@@ -50,13 +53,13 @@ const userInput = inputRef.current.value;
         </button>
 
         {error && <p className={styles.errorText}>{error}</p>}
+      
 
-        <InputValueContext.Provider value={inputValue}>
-          <ConditionalText isTrue={show} />
-        </InputValueContext.Provider>
+      <InputValueContext.Provider value={inputValue}>
+        <ConditionalText isTrue={show} />
+      </InputValueContext.Provider>
       </section>
-
-      <InputArrayContext.Provider value={inputArray}>
+            <InputArrayContext.Provider value={inputArray}>
         <List />
       </InputArrayContext.Provider>
     </>

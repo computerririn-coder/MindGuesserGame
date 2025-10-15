@@ -32,7 +32,7 @@ function Navbar() {
           <User className={styles.navIcon} />
           <a href="#">Login</a>
           <span className={styles.tooltipText}>
-             i just felt like adding this
+             This takes you to a log in page with no backend code
           </span>
         </li>
       </ul>
