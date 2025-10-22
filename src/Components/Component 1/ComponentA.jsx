@@ -1,7 +1,7 @@
 import { useState, useRef, createContext } from "react";
 import ConditionalText from "./ConditionalText";
 import { Validation } from "./Validation";
-import List from "../Component 3/List";
+import List from "../thrash/List";
 import styles from "./ComponentA.module.css";
 
 export const InputValueContext = createContext();
@@ -15,8 +15,7 @@ function ComponentA() {
   const inputRef = useRef(null)
 
   function handleResult() {
-    // use ref here to get input value
-    // example: const userInput = inputRef.current.value;
+
 const userInput = inputRef.current.value;
 
     const errorMessage = Validation(userInput);
@@ -37,6 +36,7 @@ const userInput = inputRef.current.value;
 
   return (
     <>
+    <section></section>
       <section className={styles.componentContainer}>
         <input
           ref={inputRef}
@@ -56,9 +56,6 @@ const userInput = inputRef.current.value;
         </InputValueContext.Provider>
       </section>
 
-      <InputArrayContext.Provider value={inputArray}>
-        <List />
-      </InputArrayContext.Provider>
     </>
   );
 }

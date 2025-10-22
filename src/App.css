@@ -3,24 +3,43 @@
 
 
 /* Whole page / container background */
-body {
+ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   color: #ffffff;
 }
 
-.component-container {
-  margin-top: 75px;
+.grid-container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: auto auto; /* flexible columns */
+  grid-template-rows: auto auto;  /* rows adjust to content */
+  gap: 1em;
+  grid-template-areas: 
+    "component1 component3"
+    "component2 component3";
 }
+
+
+.component1-container {
+grid-area: component1;
+}
+
+.component2-container {
+grid-area: component2;
+}
+
+.component3-container{
+grid-area: component3;
+}
+
 
 
 h1, h2, h3, h4, h5, p {
   font-family: 'Courier New', monospace;
   color: #74bb98;
 }
-body{
-  overflow: hidden;
-}
+
 
 
 
