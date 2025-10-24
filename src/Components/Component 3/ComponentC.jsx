@@ -1,16 +1,16 @@
 
 
+import styles from './ComponentC.module.css';
 
-
-
-import styles from './ComponentC.module.css'
-
-function ComponentC() {
-    return ( 
-        <>
-          <p className={styles.list}>sample</p>
-        </>
-     );
+function ComponentC({ inputArray }) {
+  return (
+    <div className={styles.list}>
+      <p>sample</p>
+      {inputArray.map((item, index) => (
+        <p key={index}>{item}</p>
+      ))}
+    </div>
+  );
 }
 
 export default ComponentC;

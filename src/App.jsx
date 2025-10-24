@@ -1,15 +1,15 @@
+import './App.css';
+import ComponentA from './Components/Component 1/ComponentA';
+import Text from './Components/Component 2/Text';
+import Navbar from './NavigationBar/NavBar';
+import ComponentC from './Components/Component 3/ComponentC';
+import { useState } from 'react';
 
-      import './App.css'
-      import ComponentA from './Components/Component 1/ComponentA'
-      import Text from './Components/Component 2/Text'
-      import Navbar from './NavigationBar/NavBar'
-      import ComponentC from './Components/Component 3/ComponentC'
-      function App() {
+function App() {
+  const [inputArray, setInputArray] = useState([]);
 
-
-        return (
-          <>
-      
+  return (
+    <>
       <header>
         <nav>
           <Navbar />
@@ -22,15 +22,15 @@
         </section>
 
         <section className="component2-container">
-          <ComponentA />
+          <ComponentA inputArray={inputArray} setInputArray={setInputArray} />
         </section>
 
         <section className="component3-container">
-          <ComponentC />
+          <ComponentC inputArray={inputArray}/>
         </section>
       </main>
-        </>
-        )
-      }
+    </>
+  );
+}
 
-      export default App
+export default App;
