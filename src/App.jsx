@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [inputArray, setInputArray] = useState([]);
+  const [currentNumber] = useState(Math.floor(Math.random() * 11));
 
   return (
     <>
@@ -22,11 +23,18 @@ function App() {
         </section>
 
         <section className="component2-container">
-          <ComponentA inputArray={inputArray} setInputArray={setInputArray} />
+          <ComponentA
+            inputArray={inputArray}
+            setInputArray={setInputArray}
+            currentNumber={currentNumber}
+          />
         </section>
 
         <section className="component3-container">
-          <ComponentC inputArray={inputArray}/>
+          <ComponentC
+            inputArray={inputArray}
+            setInputArray={setInputArray}
+          />
         </section>
       </main>
     </>

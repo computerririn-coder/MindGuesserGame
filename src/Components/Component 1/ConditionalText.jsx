@@ -8,7 +8,7 @@ function ConditionalText(props) {
 
   return (
     <p className="conditional-text">
-      {props.isTrue ? `You're Thinking Of: ${inputValue}` : "Your Thinking Of:"}
+      {props.isTrue ? `You're Thinking Of: ${inputValue}` : "You're Thinking Of:"}
     </p>
   );
 }
