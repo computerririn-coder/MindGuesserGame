@@ -1,4 +1,4 @@
-/*ComponentC css*/
+/* ComponentC css */
 
 .list {
   display: flex;
@@ -6,12 +6,11 @@
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  background-color: #1f1f1f; 
+  background-color: #1f1f1f;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-width: 40rem;
-height: 37rem;
-margin-top: 1.9rem;
+  width: 40rem;
+  height: 39rem;
 }
 
 .listItem {
@@ -25,10 +24,9 @@ margin-top: 1.9rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   color: #fff;
   transition: transform 0.2s, background-color 0.2s;
-display: flex;
+  display: flex;
 }
 
-/* Optional hover effect for each item */
 .listItem:hover {
   background-color: #353535;
   transform: translateY(-2px);
@@ -51,3 +49,10 @@ display: flex;
   transform: scale(1.05);
 }
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .list {
+    width: 90%;
+    height: auto;
+  }
+}

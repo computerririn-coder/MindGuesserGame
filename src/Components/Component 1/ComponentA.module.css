@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;   
   justify-content: center; 
+  
 }
 
 .inputRow {
@@ -62,5 +63,41 @@
 .submitButton:hover {
   background-color: #45a049;
   transform: scale(1.05);
+}
+
+.difficultyContainer{
+  display: flex;
+  flex-direction: row;
+gap: 8rem;
+position: relative;
+top: -4rem;
+}
+
+.difficultyBox {
+
+  color: white;
+  height: 3rem;
+  width: 8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.difficultyBox1{
+background-color: #45a049;
+}
+
+.difficultyBox2{
+  background-color: orangered;
+}
+
+.difficultyBox3{
+  background-color: red;
 }
 

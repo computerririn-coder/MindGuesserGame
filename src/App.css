@@ -1,49 +1,118 @@
-
-
-
-
 /* Whole page / container background */
- body {
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Grid layout */
 .grid-container {
   margin-top: 5rem;
   display: grid;
-  grid-template-columns: auto auto; /* flexible columns */
-  grid-template-rows: auto auto;  /* rows adjust to content */
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   gap: 1em;
-  grid-template-areas: 
+  grid-template-areas:
     "component1 component3"
     "component2 component3";
+  padding: 0 2rem;
 }
 
+/* Shared component wrapper */
+.component-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 900px; /* max width on large screens */
+  margin: 0;        /* keep default on desktop */
+}
 
+/* Specific areas */
 .component1-container {
-grid-area: component1;
+  grid-area: component1;
 }
 
 .component2-container {
-grid-area: component2;
+  grid-area: component2;
 }
 
-.component3-container{
-grid-area: component3;
+.component3-container {
+  grid-area: component3;
 }
 
-
-
+/* Text styling */
 h1, h2, h3, h4, h5, p {
   font-family: 'Courier New', monospace;
   color: #74bb98;
+  margin: 0 0 0.5rem 0;
 }
 
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "component1"
+      "component2"
+      "component3";
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 1.5rem;
+    justify-items: center; /* center grid items horizontally */
+  }
 
+  /* tighten max width on tablets */
+  .component-container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
+/* Mobile breakpoint */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.95rem;
+    padding: 0 0.75rem;
+  }
 
+  .grid-container {
+    gap: 1rem;
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "component1"
+      "component2"
+      "component3";
+    justify-items: center;
+    align-items: start;
+  }
 
+  /* make components narrower and centered */
+  .component-container {
+    max-width: 480px; /* reduces full-width feel */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
+  /* If a component still stretches, force its content to center */
+  .component1-container,
+  .component2-container,
+  .component3-container {
+    justify-self: center;
+    text-align: center;
+  }
 
+  h1, h2, h3 {
+    font-size: 1.15rem;
+  }
 
+  p {
+    font-size: 0.95rem;
+  }
+}

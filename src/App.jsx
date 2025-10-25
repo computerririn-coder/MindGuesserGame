@@ -6,8 +6,11 @@ import ComponentC from './Components/Component 3/ComponentC';
 import { useState } from 'react';
 
 function App() {
-  const [inputArray, setInputArray] = useState([]);
-  const [currentNumber] = useState(Math.floor(Math.random() * 11));
+const [inputArray, setInputArray] = useState([
+  { value: "Sample", isCorrect: false }, // red
+  { value: "Sample", isCorrect: true }   // green
+]);
+const [currentNumber] = useState(Math.floor(Math.random() * 11));
 
   return (
     <>

@@ -10,7 +10,8 @@ function ComponentA({ inputArray, setInputArray, currentNumber }) {
   const [showResult, setShowResult] = useState(false);
   const [error, setError] = useState("");
   const inputRef = useRef(null);
-
+const [difficultyIsClicked, setDifficultyIsClicked] = useState(false);
+const [level, setLevel] = useState(null)
   function handleResult() {
     const userInput = inputRef.current.value;
     const validationError = Validation(userInput);
@@ -31,11 +32,24 @@ function ComponentA({ inputArray, setInputArray, currentNumber }) {
     inputRef.current.value = "";
   }
 
+  function handleDifficultyClick(levelDifficulty){
+    setDifficultyIsClicked(true);
+    if(levelDifficulty == "easy") setLevel(2);
+    if(levelDifficulty == "normal") setLevel(3);
+    if(levelDifficulty == "hard") setLevel(4);
+  }
+
+ 
+
+
   return (
     <section className={styles.componentContainer}>
-      <h2>
-        I'm Thinking Of A Number Between {currentNumber} And {currentNumber + 2}
-      </h2>
+
+      <div className={styles.difficultyContainer}>
+        <div onClick={() => handleDifficultyClick("easy")} className={`${styles.difficultyBox} ${styles.difficultyBox1}`}>Easy Difficulty</div>
+         <div onClick={() => handleDifficultyClick("normal")} className={`${styles.difficultyBox} ${styles.difficultyBox2}`}>Normal Difficulty</div>
+          <div onClick={() => handleDifficultyClick("hard")} className={`${styles.difficultyBox} ${styles.difficultyBox3}`}>Hard Difficulty</div>
+      </div>
 
       <div className={styles.inputRow}>
         <input
@@ -54,6 +68,11 @@ function ComponentA({ inputArray, setInputArray, currentNumber }) {
       <InputValueContext.Provider value={latestGuess}>
         <ConditionalText isTrue={showResult} />
       </InputValueContext.Provider>
+      {difficultyIsClicked &&(
+      <h2>
+        I'm Thinking Of A Number Between {currentNumber} And {currentNumber + level}
+      </h2>
+)}
     </section>
   );
 }
